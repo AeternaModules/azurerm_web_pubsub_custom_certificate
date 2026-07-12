@@ -1,3 +1,7 @@
+output "web_pubsub_custom_certificates_id" {
+  description = "Map of id values across all web_pubsub_custom_certificates, keyed the same as var.web_pubsub_custom_certificates"
+  value       = { for k, v in azurerm_web_pubsub_custom_certificate.web_pubsub_custom_certificates : k => v.id }
+}
 output "web_pubsub_custom_certificates_certificate_version" {
   description = "Map of certificate_version values across all web_pubsub_custom_certificates, keyed the same as var.web_pubsub_custom_certificates"
   value       = { for k, v in azurerm_web_pubsub_custom_certificate.web_pubsub_custom_certificates : k => v.certificate_version }
